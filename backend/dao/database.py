@@ -1,12 +1,13 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from dotenv import  load_dotenv
+from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+# Use NEON_DATABASE_URL in production, fall back to local DATABASE_URL
+DATABASE_URL = os.getenv("NEON_DATABASE_URL") or os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 
