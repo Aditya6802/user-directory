@@ -75,35 +75,37 @@ function HomePage() {
           onChange={e => setSearch(e.target.value)}
         />
 
-        <table>
-          <thead>
-            <tr>
-              <th>Sr. No</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>City</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredUsers.map((user, index) => (
-              <tr key={user.id}>
-                <td>{index + 1}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.city || "—"}</td>
-                <td>
-                  <button
-                    className="btn btn-danger-outline"
-                    onClick={() => handleDelete(user.id)}
-                  >
-                    🗑 Delete
-                  </button>
-                </td>
+        <div className="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Sr. No</th>
+                <th>Name</th>
+                <th className="hide-mobile">Email</th>
+                <th className="hide-mobile">City</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredUsers.map((user, index) => (
+                <tr key={user.id}>
+                  <td>{index + 1}</td>
+                  <td>{user.name}</td>
+                  <td className="hide-mobile">{user.email}</td>
+                  <td className="hide-mobile">{user.city || "—"}</td>
+                  <td>
+                    <button
+                      className="btn btn-danger-outline"
+                      onClick={() => handleDelete(user.id)}
+                    >
+                      🗑 Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         <div className="total-users">
           Total Users: <span>{filteredUsers.length}</span>

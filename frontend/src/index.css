@@ -290,3 +290,72 @@ tbody td {
   from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* RESPONSIVE — Mobile */
+@media (max-width: 600px) {
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .navbar-brand {
+    font-size: 0.95rem;
+  }
+
+  .page-container {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .page-header .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .page-title {
+    font-size: 1.3rem;
+  }
+
+  /* Make table scroll horizontally */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 500px;
+  }
+
+  /* Hide city column on mobile */
+  .hide-mobile {
+    display: none;
+  }
+
+  thead th {
+    font-size: 0.75rem;
+    padding: 8px 10px;
+  }
+
+  tbody td {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
